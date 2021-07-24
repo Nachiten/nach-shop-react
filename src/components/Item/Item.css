@@ -1,0 +1,47 @@
+p {
+   padding: 0rem 1rem 0.3rem 1rem;
+}
+
+img {
+   padding: 1rem 0rem 0rem 0rem;
+}
+
+.card {
+   background: #353535;
+
+   justify-content: flex-start;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: justify;
+   font-size: 0.7rem;
+
+   box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem,
+      rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+   height: 100%;
+   width: 100%;
+   border-radius: 7px;
+   transition: all 350ms;
+   overflow: hidden;
+
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+}
+
+.card:hover {
+   box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em,
+      rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+   transform: translateY(-2px) scale(1.05);
+}
+
+/*
+.content{
+   
+}
+
+.buttons {
+   justify-content: flex-end;
+}
+*/
