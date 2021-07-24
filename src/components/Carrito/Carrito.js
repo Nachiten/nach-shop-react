@@ -1,26 +1,11 @@
+import React, {useState} from "react";
 import ItemCarrito from "../ItemCarrito/ItemCarrito";
 
 import "./Carrito.css";
 
-const Carrito = () => {
+const Carrito = (props) => {
 
-   const itemsCarrito = [
-      {
-         id: "item1",
-         itemName: "Nombre Item 1",
-         imageSrc: "/assets/img/Item1.png",
-         imageAlt: "Item1Image",
-         amount: 10,
-      },
-      {
-         id: "item2",
-         itemName: "Nombre Item 2 oaiwhdiawohdioawodh",
-         imageSrc: "/assets/img/Item2.png",
-         imageAlt: "Item2Image",
-         amount: 15,
-      },
-
-   ];
+   let itemsCarrito = props.itemsCarrito;
 
    const showedItems = itemsCarrito.map(unItem => { return <ItemCarrito item={unItem} /> });
 
