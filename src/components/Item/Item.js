@@ -25,8 +25,6 @@ const Item = (props) => {
             <input type="number" min="1" max="50" step="1" value={amount} onChange={amountChangeHandler}></input>
             <button>Añadir al Carro</button>
          </div>
-
-
       </div>
    );
 };

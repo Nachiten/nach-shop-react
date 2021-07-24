@@ -1,0 +1,7 @@
+.basic-grid-carrito {
+   display: flex;
+   flex-direction: column;
+
+   gap: 0.85rem;
+   padding: 0.85rem;
+}

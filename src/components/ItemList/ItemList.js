@@ -73,9 +73,13 @@ const ItemList = () => {
    const showedItems = items.map(unItem => { return <Item item={unItem} /> });
 
    return (
-      <section className="basic-grid">
-         {showedItems}
-      </section>
+      <div>
+         <h1>Productos disponibles en Nach Shop</h1>
+
+         <section className="basic-grid">
+            {showedItems}
+         </section>
+      </div>
    );
 
 }

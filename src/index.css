@@ -1,21 +1,66 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans&display=swap");
 
 * {
-  box-sizing: border-box;
+   box-sizing: border-box;
 }
 
 html {
-  color: #fff;
-  font-family: "Noto Sans", sans-serif;
+   color: #fff;
+   font-family: "Noto Sans", sans-serif;
 }
 
 body {
-  margin: 0;
-  /* Fondo de toda la pagina*/
-  background-color: #4b4b4b;
+   margin: 0;
+   /* Fondo de toda la pagina*/
+   background-color: #4b4b4b;
 }
 
 h1 {
-  text-align: center;
+   text-align: center;
 }
 
+button {
+   display: inline-block;
+   padding: 0.3em 0.6em;
+   margin: 0.5em 0.5em;
+   border: 0.16em solid rgba(255, 255, 255, 0);
+   border-radius: 0.6em;
+   box-sizing: border-box;
+   text-decoration: none;
+   font-family: "Roboto", sans-serif;
+   font-weight: 300;
+   background-color: rgb(87, 87, 87);
+   color: #ffffff;
+   text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+   text-align: center;
+   transition: all 0.2s;
+}
+
+button:hover {
+   border-color: white;
+}
+
+button:active {
+   border-color: black;
+   color: black;
+}
+
+@media all and (max-width: 30em) {
+    button {
+      display: block;
+      margin: 0.2em auto;
+   }
+}
+
+input {
+   border-radius: 0.6em;
+   background-color: rgb(87, 87, 87);
+   color: #ffffff;
+   padding: 0.3em 0.6em;
+   margin: 0.5em 0.5em;
+}
+
+p {
+   padding: 0.3em 0.6em;
+   margin: 0.5em 0.5em;
+}
