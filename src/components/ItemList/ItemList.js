@@ -7,12 +7,14 @@ const ItemList = () => {
 
    const items = [
       {
+         id: "item1",
          imageSrc: "/assets/img/Item1.png",
          imageAlt: "Item1Image",
          itemName: "Nombre Item 1",
          itemDescr: "Velit dignissim sodales ut eu sem integer vitae justo eget",
       },
       {
+         id: "item2",
          imageSrc: "/assets/img/Item2.png",
          imageAlt: "Item2Image",
          itemName: "Nombre Item 2",
@@ -21,18 +23,21 @@ const ItemList = () => {
             "et magnis dis parturient montes nascetur",
       },
       {
+         id: "item3",
          imageSrc: "/assets/img/Item3.png",
          imageAlt: "Item3Image",
          itemName: "Nombre Item 3",
          itemDescr: "Convallis a cras semper auctor",
       },
       {
+         id: "item4",
          imageSrc: "/assets/img/Item1.png",
          imageAlt: "Item1Image",
          itemName: "Nombre Item 4",
          itemDescr: "Velit dignissim sodales ut eu sem integer vitae justo eget",
       },
       {
+         id: "item5",
          imageSrc: "/assets/img/Item2.png",
          imageAlt: "Item2Image",
          itemName: "Nombre Item 5",
@@ -41,18 +46,21 @@ const ItemList = () => {
             "et magnis dis parturient montes nascetur",
       },
       {
+         id: "item6",
          imageSrc: "/assets/img/Item3.png",
          imageAlt: "Item3Image",
          itemName: "Nombre Item 6",
          itemDescr: "Convallis a cras semper auctor",
       },
       {
+         id: "item7",
          imageSrc: "/assets/img/Item1.png",
          imageAlt: "Item1Image",
          itemName: "Nombre Item 7",
          itemDescr: "Velit dignissim sodales ut eu sem integer vitae justo eget",
       },
       {
+         id: "item8",
          imageSrc: "/assets/img/Item2.png",
          imageAlt: "Item2Image",
          itemName: "Nombre Item 8",
