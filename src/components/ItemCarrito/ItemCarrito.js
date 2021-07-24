@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 import "./ItemCarrito.css";
 
@@ -6,7 +6,7 @@ const ItemCarrito = (props) => {
 
    const item = props.item;
 
-   const [amount, setAmount] = useState("1");
+   const [amount, setAmount] = useState(props.amount);
 
    const amountChangeHandler = (event) => {
       setAmount(event.target.value);

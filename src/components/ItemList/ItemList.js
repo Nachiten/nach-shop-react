@@ -3,7 +3,7 @@ import React from 'react';
 import Item from '../Item/Item';
 import "./ItemList.css";
 
-const ItemList = () => {
+const ItemList = (props) => {
 
    const items = [
       {
@@ -70,7 +70,15 @@ const ItemList = () => {
       },
    ];
 
-   const showedItems = items.map(unItem => { return <Item item={unItem} /> });
+   const agregarItemEnCarrito = (item) => {
+
+      console.log("[ItemList.js]");
+      console.log(item);
+
+      props.agregarItemEnCarrito(item);
+   };
+
+   const showedItems = items.map(unItem => { return <Item item={unItem} agregarItemEnCarrito={agregarItemEnCarrito} key={unItem.id}/> });
 
    return (
       <div>

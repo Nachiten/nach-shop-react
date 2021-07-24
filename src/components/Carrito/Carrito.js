@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import ItemCarrito from "../ItemCarrito/ItemCarrito";
 
 import "./Carrito.css";
@@ -7,7 +7,11 @@ const Carrito = (props) => {
 
    let itemsCarrito = props.itemsCarrito;
 
-   const showedItems = itemsCarrito.map(unItem => { return <ItemCarrito item={unItem} /> });
+   let showedItems = null;
+
+   if (itemsCarrito.lenght !== 0){
+      showedItems = itemsCarrito.map(unItem => { return <ItemCarrito item={unItem} amount={unItem.amount} key={unItem.id} /> });
+   }
 
    return (
       <div>

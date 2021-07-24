@@ -10,29 +10,45 @@ function App() {
   const [itemsCarrito, setItemsCarrito] = useState([]);
 
   const sumarItemEnCarrito = (item) => {
-    itemsCarrito = [
-      ...itemsCarrito,
-      item,
-    ]
+    console.log("[App.js]");
+    console.log(item);
+
+    const indexItemExistente = itemsCarrito.findIndex(unItem => unItem.id === item.id);
+
+    if (indexItemExistente === -1) {
+      console.log("NO existia el item antes.");
+
+      setItemsCarrito((prevState) => {
+        return [
+          ...prevState,
+          item,
+        ]
+      });
+
+    } else {
+      console.log("SI existia el item antes.");
+
+      setItemsCarrito((prevState) => {
+
+        const cantidadAnterior = prevState[indexItemExistente].amount;
+
+        prevState.splice(indexItemExistente, 1);
+
+        item.amount = parseInt(item.amount) + parseInt(cantidadAnterior);
+
+        const nuevoCarrito = [
+          ...prevState,
+          item,
+        ];
+
+        console.log("[App.js] NuevoCarrito:");
+        console.log(nuevoCarrito);
+
+        return nuevoCarrito;
+      });
+
+    }
   };
-
-  {/*let itemsCarrito = [
-    {
-       id: "item1",
-       itemName: "Nombre Item 1",
-       imageSrc: "/assets/img/Item1.png",
-       imageAlt: "Item1Image",
-       amount: 10,
-    },
-    {
-       id: "item2",
-       itemName: "Nombre Item 2 oaiwhdiawohdioawodh",
-       imageSrc: "/assets/img/Item2.png",
-       imageAlt: "Item2Image",
-       amount: 15,
-    },
-
- ];  */}
 
   return (
     <div>
