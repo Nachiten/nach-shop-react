@@ -72,8 +72,8 @@ const ItemList = (props) => {
 
    const agregarItemEnCarrito = (item) => {
 
-      console.log("[ItemList.js]");
-      console.log(item);
+      //console.log("[ItemList.js]");
+      //console.log(item);
 
       props.agregarItemEnCarrito(item);
    };

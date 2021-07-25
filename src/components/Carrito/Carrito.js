@@ -10,7 +10,7 @@ const Carrito = (props) => {
    let showedItems = null;
 
    if (itemsCarrito.lenght !== 0){
-      showedItems = itemsCarrito.map(unItem => { return <ItemCarrito item={unItem} amount={unItem.amount} key={unItem.id} /> });
+      showedItems = itemsCarrito.map(unItem => { return <ItemCarrito eliminarItem={props.eliminarItem} cambiarCantidadItem={props.cambiarCantidadItem} item={unItem} amount={unItem.amount} key={unItem.id} /> });
    }
 
    return (

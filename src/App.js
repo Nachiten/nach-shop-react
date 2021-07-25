@@ -7,55 +7,71 @@ import Carrito from "./components/Carrito/Carrito";
 
 function App() {
 
-  const [itemsCarrito, setItemsCarrito] = useState([]);
+   const [itemsCarrito, setItemsCarrito] = useState([]);
 
-  const sumarItemEnCarrito = (item) => {
-    console.log("[App.js]");
-    console.log(item);
+   const sumarItemEnCarrito = (item) => {
+      const indexItemExistente = itemsCarrito.findIndex(unItem => unItem.id === item.id);
 
-    const indexItemExistente = itemsCarrito.findIndex(unItem => unItem.id === item.id);
+      // El item no existia, agrego uno nuevo
+      if (indexItemExistente === -1) {
+         setItemsCarrito((prevState) => {
+            return [
+               ...prevState,
+               item,
+            ]
+         });
 
-    if (indexItemExistente === -1) {
-      console.log("NO existia el item antes.");
+         // El item si existia, agrego la cantidad al existente
+      } else {
+         setItemsCarrito((prevState) => {
 
+            const cantidadAnterior = prevState[indexItemExistente].amount;
+            prevState.splice(indexItemExistente, 1);
+            item.amount = parseInt(item.amount) + parseInt(cantidadAnterior);
+
+            return [
+               ...prevState,
+               item,
+            ];
+         });
+
+      }
+   };
+
+   const cambiarCantidadItem = (item, cantidad) => {
+      const indexItemExistente = itemsCarrito.findIndex(unItem => unItem.id === item.id);
+
+      // Fijo la nueva cantidad en el item existente 
       setItemsCarrito((prevState) => {
-        return [
-          ...prevState,
-          item,
-        ]
+         prevState.splice(indexItemExistente, 1);
+         item.amount = cantidad;
+
+         return [
+            ...prevState,
+            item,
+         ];
       });
+   };
 
-    } else {
-      console.log("SI existia el item antes.");
+   const eliminarItem = (item) => {
+      const indexItemExistente = itemsCarrito.findIndex(unItem => unItem.id === item.id);
 
+      // Elimino el item
       setItemsCarrito((prevState) => {
+         prevState.splice(indexItemExistente, 1);
 
-        const cantidadAnterior = prevState[indexItemExistente].amount;
-
-        prevState.splice(indexItemExistente, 1);
-
-        item.amount = parseInt(item.amount) + parseInt(cantidadAnterior);
-
-        const nuevoCarrito = [
-          ...prevState,
-          item,
-        ];
-
-        console.log("[App.js] NuevoCarrito:");
-        console.log(nuevoCarrito);
-
-        return nuevoCarrito;
+         return [
+            ...prevState,
+         ];
       });
+   }
 
-    }
-  };
-
-  return (
-    <div>
-      <ItemList agregarItemEnCarrito={sumarItemEnCarrito} />
-      <Carrito itemsCarrito={itemsCarrito} />
-    </div>
-  );
+   return (
+      <div>
+         <ItemList agregarItemEnCarrito={sumarItemEnCarrito} />
+         <Carrito eliminarItem={eliminarItem} itemsCarrito={itemsCarrito} cambiarCantidadItem={cambiarCantidadItem} />
+      </div>
+   );
 }
 
 export default App;

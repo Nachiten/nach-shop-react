@@ -9,8 +9,8 @@ const Item = (props) => {
    const [amount, setAmount] = useState(1);
 
    const amountChangeHandler = (event) => {
-      console.log("[Item.js]");
-      console.log("Amount: " + event.target.value);
+      //console.log("[Item.js]");
+      //console.log("Amount: " + event.target.value);
       setAmount(event.target.value);
    }
 
@@ -21,8 +21,8 @@ const Item = (props) => {
          amount: amount,
       };
 
-      console.log("[Item.js]");
-      console.log(itemAAgregar);
+      //console.log("[Item.js]");
+      //console.log(itemAAgregar);
 
       props.agregarItemEnCarrito(itemAAgregar);
    };
