@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 import "./ItemCarrito.css";
 
 const ItemCarrito = (props) => {
-
    const item = props.item;
 
    const [currentAmount, setCurrentAmount] = useState(props.amount);
@@ -12,7 +11,7 @@ const ItemCarrito = (props) => {
    // Cuando se elije un nuevo valor, se actualiza newAmount
    const amountChangeHandler = (event) => {
       setNewAmount(event.target.value);
-   }
+   };
 
    // Cuando llega un nuevo valor de props.amount (cuando se agrega mas cantidad a este item)
    // Entonces se setean currentAmount y newAmount al valor que llego
@@ -21,13 +20,26 @@ const ItemCarrito = (props) => {
       setNewAmount(props.amount);
    }
 
+   console.log("Current amount: " + currentAmount);
+   console.log("Props.amount: " + props.amount);
+   console.log("New Amount: " + newAmount);
+
    return (
       <span className="card-carrito">
          <img src={item.imageSrc} alt={item.imageAlt} />
          <h2>{item.itemName}</h2>
          <h2>Cantidad: {currentAmount}</h2>
-         <input type="number" min="1" max="50" step="1" value={newAmount} onChange={amountChangeHandler}></input>
-         <button onClick={() => props.cambiarCantidadItem(item, newAmount)}>Cambiar Cantidad</button>
+         <input
+            type="number"
+            min="1"
+            max="50"
+            step="1"
+            value={newAmount}
+            onChange={amountChangeHandler}
+         ></input>
+         <button onClick={() => props.cambiarCantidadItem(item, newAmount)}>
+            Cambiar Cantidad
+         </button>
          <button onClick={() => props.eliminarItem(item)}>Eliminar</button>
       </span>
    );
