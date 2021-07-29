@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
+import NotFound from "./components/NotFound/NotFound";
 // eslint-disable-next-line 
 import ItemList from "./components/ItemList/ItemList";
 // eslint-disable-next-line 
@@ -12,6 +14,8 @@ function App() {
    const sumarItemEnCarrito = (item) => {
       const indexItemExistente = itemsCarrito.findIndex(unItem => unItem.id === item.id);
 
+
+      // El item si existia, agrego la cantidad al existente
       // El item no existia, agrego uno nuevo
       if (indexItemExistente === -1) {
          setItemsCarrito((prevState) => {
@@ -20,8 +24,6 @@ function App() {
                item,
             ]
          });
-
-         // El item si existia, agrego la cantidad al existente
       } else {
          setItemsCarrito((prevState) => {
 
@@ -66,10 +68,23 @@ function App() {
       });
    }
 
+   const itemListObject = () => {
+      return <ItemList agregarItemEnCarrito={sumarItemEnCarrito} />;
+   };
+
+   const carritoObject = () => {
+      return <Carrito eliminarItem={eliminarItem} itemsCarrito={itemsCarrito} cambiarCantidadItem={cambiarCantidadItem} />;
+   };
+
    return (
       <div>
-         <ItemList agregarItemEnCarrito={sumarItemEnCarrito} />
-         <Carrito eliminarItem={eliminarItem} itemsCarrito={itemsCarrito} cambiarCantidadItem={cambiarCantidadItem} />
+         <BrowserRouter>
+            <Switch>
+               <Route path="/productos" component={itemListObject} />
+               <Route path="/carrito" component={carritoObject} />
+               <Route path="/" component={carritoObject} />
+            </Switch>
+         </BrowserRouter>
       </div>
    );
 }

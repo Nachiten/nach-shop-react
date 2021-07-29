@@ -7,7 +7,7 @@ const Carrito = (props) => {
 
    let itemsCarrito = props.itemsCarrito;
 
-   let showedItems = null;
+   let showedItems = "No hay ningun item en el carrito.";
 
    if (itemsCarrito.lenght !== 0){
       showedItems = itemsCarrito.map(unItem => { return <ItemCarrito eliminarItem={props.eliminarItem} cambiarCantidadItem={props.cambiarCantidadItem} item={unItem} amount={unItem.amount} key={unItem.id} /> });
