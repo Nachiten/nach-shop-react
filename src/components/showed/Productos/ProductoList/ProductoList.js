@@ -1,9 +1,9 @@
 import React from "react";
 
-import Item from "../Item/Item";
-import "./ItemList.css";
+import ProductoItem from "../ProductoItem/ProductoItem";
+import "./ProductoList.css";
 
-const ItemList = (props) => {
+const ProductoList = (props) => {
    const items = [
       {
          id: "item1",
@@ -12,6 +12,7 @@ const ItemList = (props) => {
          itemName: "Nombre Item 1",
          itemDescr:
             "Velit dignissim sodales ut eu sem integer vitae justo eget",
+         price: 15.05,
       },
       {
          id: "item2",
@@ -22,6 +23,7 @@ const ItemList = (props) => {
             "Vitae et leo duis ut diam quam nulla porttitor massa id neque aliquam vestibulum morbi blandit " +
             "cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget gravida cum sociis natoque penatibus " +
             "et magnis dis parturient montes nascetur",
+         price: 25.1,
       },
       {
          id: "item3",
@@ -29,6 +31,7 @@ const ItemList = (props) => {
          imageAlt: "Item3Image",
          itemName: "Nombre Item 3",
          itemDescr: "Convallis a cras semper auctor",
+         price: 32.4,
       },
       {
          id: "item4",
@@ -37,6 +40,7 @@ const ItemList = (props) => {
          itemName: "Nombre Item 4",
          itemDescr:
             "Velit dignissim sodales ut eu sem integer vitae justo eget",
+            price: 18,
       },
       {
          id: "item5",
@@ -47,6 +51,7 @@ const ItemList = (props) => {
             "Vitae et leo duis ut diam quam nulla porttitor massa id neque aliquam vestibulum morbi blandit " +
             "cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget gravida cum sociis natoque penatibus " +
             "et magnis dis parturient montes nascetur",
+         price: 48,
       },
       {
          id: "item6",
@@ -54,6 +59,7 @@ const ItemList = (props) => {
          imageAlt: "Item3Image",
          itemName: "Nombre Item 6",
          itemDescr: "Convallis a cras semper auctor",
+         price: 23,
       },
       {
          id: "item7",
@@ -62,6 +68,7 @@ const ItemList = (props) => {
          itemName: "Nombre Item 7",
          itemDescr:
             "Velit dignissim sodales ut eu sem integer vitae justo eget",
+         price: 150000.23,
       },
       {
          id: "item8",
@@ -72,6 +79,7 @@ const ItemList = (props) => {
             "Vitae et leo duis ut diam quam nulla porttitor massa id neque aliquam vestibulum morbi blandit " +
             "cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget gravida cum sociis natoque penatibus " +
             "et magnis dis parturient montes nascetur",
+         price: 5.2,
       },
    ];
 
@@ -81,7 +89,7 @@ const ItemList = (props) => {
 
    const showedItems = items.map((unItem) => {
       return (
-         <Item
+         <ProductoItem
             item={unItem}
             agregarItemEnCarrito={agregarItemEnCarrito}
             key={unItem.id}
@@ -98,4 +106,4 @@ const ItemList = (props) => {
    );
 };
 
-export default ItemList;
+export default ProductoList;

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import "./ItemCarrito.css";
+import "./CarritoItem.css";
 
-const ItemCarrito = (props) => {
+const CarritoItem = (props) => {
    const item = props.item;
 
    const [currentAmount, setCurrentAmount] = useState(props.amount);
@@ -19,11 +19,7 @@ const ItemCarrito = (props) => {
       setCurrentAmount(props.amount);
       setNewAmount(props.amount);
    }
-
-   console.log("Current amount: " + currentAmount);
-   console.log("Props.amount: " + props.amount);
-   console.log("New Amount: " + newAmount);
-
+   
    return (
       <span className="card-carrito">
          <img src={item.imageSrc} alt={item.imageAlt} />
@@ -45,4 +41,4 @@ const ItemCarrito = (props) => {
    );
 };
 
-export default ItemCarrito;
+export default CarritoItem;

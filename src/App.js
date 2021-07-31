@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 // eslint-disable-next-line
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 
 // eslint-disable-next-line
 import NotFound from "./components/NotFound/NotFound";
-// eslint-disable-next-line
-import ItemList from "./components/ItemList/ItemList";
-// eslint-disable-next-line
-import Carrito from "./components/Carrito/Carrito";
+import ProductoList from "./components/showed/Productos/ProductoList/ProductoList";
+import CarritoList from  "./components/showed/Carrito/CarritoList/CarritoList";
 
 function App() {
    const [itemsCarrito, setItemsCarrito] = useState([]);
 
-   const sumarItemEnCarrito = (item) => {
+   const sumarItemHandler = (item) => {
       const indexItemExistente = itemsCarrito.findIndex(
          (unItem) => unItem.id === item.id
       );
@@ -38,7 +36,7 @@ function App() {
       }
    };
 
-   const cambiarCantidadItem = (item, cantidad) => {
+   const cambiarCantidadItemHandler = (item, cantidad) => {
       const indexItemExistente = itemsCarrito.findIndex(
          (unItem) => unItem.id === item.id
       );
@@ -54,7 +52,7 @@ function App() {
       });
    };
 
-   const eliminarItem = (item) => {
+   const eliminarItemHandler = (item) => {
       const indexItemExistente = itemsCarrito.findIndex(
          (unItem) => unItem.id === item.id
       );
@@ -67,19 +65,21 @@ function App() {
       });
    };
 
+   /*
    const itemListObject = () => {
-      return <ItemList agregarItemEnCarrito={sumarItemEnCarrito} />;
+      return <ProductoList agregarItemEnCarrito={sumarItemHandler} />;
    };
 
    const carritoObject = () => {
       return (
-         <Carrito
-            eliminarItem={eliminarItem}
+         <CarritoList
+            eliminarItem={eliminarItemHandler}
             itemsCarrito={itemsCarrito}
-            cambiarCantidadItem={cambiarCantidadItem}
+            cambiarCantidadItem={cambiarCantidadItemHandler}
          />
       );
    };
+   */
 
    return (
       <div>
@@ -90,12 +90,12 @@ function App() {
                <Route path="/" component={NotFound} />
             </Switch>
          </BrowserRouter>*/}
-         <Carrito
-            eliminarItem={eliminarItem}
+         <CarritoList
+            eliminarItem={eliminarItemHandler}
             itemsCarrito={itemsCarrito}
-            cambiarCantidadItem={cambiarCantidadItem}
+            cambiarCantidadItem={cambiarCantidadItemHandler}
          />
-         <ItemList agregarItemEnCarrito={sumarItemEnCarrito} />
+         <ProductoList agregarItemEnCarrito={sumarItemHandler} />
       </div>
    );
 }

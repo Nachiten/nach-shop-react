@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import "./Item.css";
+import "./ProductoItem.css";
 
-const Item = (props) => {
+const ProductoItem = (props) => {
    const item = props.item;
 
    const [amount, setAmount] = useState(1);
@@ -29,6 +29,7 @@ const Item = (props) => {
          </div>
 
          <div className="input">
+            <h2>$ {item.price}</h2>
             <input
                type="number"
                min="1"
@@ -43,4 +44,4 @@ const Item = (props) => {
    );
 };
 
-export default Item;
+export default ProductoItem;

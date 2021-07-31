@@ -39,6 +39,10 @@
 
 .input {
    justify-content: flex-end;
+
+   font-size: 0.7rem;
+   align-items: center;
+   text-align: center;
    padding: 0rem 0rem 1rem 0rem;
 }
 
