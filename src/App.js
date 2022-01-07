@@ -79,21 +79,11 @@ const App = (props) => {
       );
    };
 
-   /* 
-   <div>
-      <BrowserRouter>
-         <Switch>
-            <Route path="/productos" component={itemListObject} />
-            <Route path="/carrito" component={carritoObject} />
-            <Route path="/" component={itemListObject} />
-         </Switch>
-      </BrowserRouter>
-   </div>
-   */
-
    return (
       <section class="site-grid">
-         <section class="header">TITULO DE LA PAGINA</section>
+         <section class="header">
+            <img src="/assets/img/Banner.png" alt="Imagen de banner" />
+         </section>
 
          <section class="navbar">
             <ul>
@@ -113,23 +103,27 @@ const App = (props) => {
          </section>
 
          <section class="content">
-            <section class="children-grid">
-               <section class="children-a">CHILDREN A</section>
-               <section class="children-b">CHILDREN B</section>
-               <section class="children-c">CHILDREN C</section>
-               <section class="children-d">CHILDREN D</section>
-               <section class="children-e">CHILDREN E</section>
-               <section class="children-f">CHILDREN F</section>
-               <section class="children-g">CHILDREN G</section>
-               <section class="children-h">CHILDREN H</section>
-            </section>
+            <BrowserRouter>
+               <Switch>
+                  <Route path="/" exact component={itemListObject} />
+                  <Route path="/productos" component={itemListObject} />
+                  <Route path="/carrito" component={carritoObject} />
+                  <Route path="/" exact component={NotFound} />
+               </Switch>
+            </BrowserRouter>
          </section>
 
-         <section class="sidebar-left">SIDEBAR LEFT</section>
+         <section class="sidebar-left">
+            <h3>SIDEBAR LEFT</h3>
+         </section>
 
-         <section class="sidebar-right">SIDEBAR RIGHT</section>
+         <section class="sidebar-right">
+            <h3>SIDEBAR RIGHT</h3>
+         </section>
 
-         <section class="footer">FOOTER</section>
+         <section class="footer">
+            <h3>FOOTER</h3>
+         </section>
       </section>
    );
 };
